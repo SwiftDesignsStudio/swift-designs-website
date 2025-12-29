@@ -37,25 +37,40 @@ It serves as the official website and showcase for **Corey Shamburger** — high
 ## 🗂️ Folder Structure
 ```
 swift-designs/
-│
-├── css/               # Stylesheets (Bootstrap, style.css, responsive.css, etc.)
-├── js/                # JavaScript files (main.js, contact.js, plugins)
-├── images/            # Images & portfolio assets
-├── fonts/             # Web fonts
-│
-├── header.php         # Shared header/navigation
-├── footer.php         # Shared footer/scripts
-├── index.php          # Homepage
-├── about.php          # About page
-├── services.php       # Services page
-├── portfolio.php      # Portfolio page
-├── testimonial.php    # Testimonials page
-├── contact.php        # Contact form backend logic
-│
-├── .htaccess          # Directory/URL configuration
-├── README.md          # Documentation
-└── .gitignore         # Git exclusion rules
-```
+web/
+ ├─ app/
+ │   ├─ layout.tsx              # site shell (uses header/footer)
+ │   ├─ page.tsx                # /            ← from index.php
+ │   ├─ about/
+ │   │   └─ page.tsx            # /about       ← from about.php
+ │   ├─ services/
+ │   │   └─ page.tsx            # /services    ← from services.php
+ │   ├─ portfolio/
+ │   │   └─ page.tsx            # /portfolio   ← from portfolio.php
+ │   ├─ testimonials/
+ │   │   └─ page.tsx            # /testimonials← from testimonial.php
+ │   ├─ blog/
+ │   │   └─ page.tsx            # /blog        ← from blog.php or old blog index
+ │   ├─ contact/
+ │   │   └─ page.tsx            # /contact     ← from contact.php
+ │   ├─ privacy/
+ │   │   └─ page.tsx            # /privacy     ← from privacy.php
+ │   ├─ terms/
+ │   │   └─ page.tsx            # /terms       ← from terms.php
+ │   └─ api/
+ │       └─ contact/
+ │           └─ route.ts        # replaces data-processing.php (form handler)
+ │
+ ├─ components/
+ │   ├─ Header.tsx              # from header.php
+ │   └─ Footer.tsx              # from footer.php
+ │
+ ├─ public/
+ │   ├─ images/                 # move old /images here
+ │   ├─ fonts/                  # move fonts here (or keep where they are & fix paths)
+ │   └─ (optional) css/js       # if you keep legacy CSS/JS
+ └─ package.json
+
 
 ---
 
