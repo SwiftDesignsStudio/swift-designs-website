@@ -37,7 +37,7 @@ It serves as the official website and showcase for **Corey Shamburger** — high
 ## 🗂️ Folder Structure
 ```
 swift-designs/
-web/
+
  ├─ app/
  │   ├─ layout.tsx              # site shell (uses header/footer)
  │   ├─ page.tsx                # /            ← from index.php
