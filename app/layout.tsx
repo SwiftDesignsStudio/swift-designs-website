@@ -3,7 +3,18 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import "../css/styles.css";
+import Script from "next/script";
+
+export const metadata: Metadata = {
+  title: "Swift Designs Studio",
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -13,8 +24,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/images/logo/favicon.ico" />
-
         {/* CSS */}
         <link rel="stylesheet" href="/css/normalize.css" />
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -28,15 +37,8 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/responsive.css" />
 
         {/* Fonts */}
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
@@ -48,8 +50,11 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         />
 
-        {/* Head JS */}
-        <script src="/js/modernizr.custom.js" />
+        <Script
+          src="/js/modernizr.custom.js"
+          strategy="beforeInteractive"
+        />
+
       </head>
 
       <body>
@@ -60,4 +65,3 @@ export default function RootLayout({
     </html>
   );
 }
-
